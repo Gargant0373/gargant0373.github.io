@@ -1,0 +1,28 @@
+td {
+  padding: 10px;
+}
+
+table {
+  margin-right: auto;
+  margin-left: auto;
+
+  border: 1px solid #ddd;
+  border-collapse: collapse;
+}
+
+tr:nth-child(1) {
+  border-bottom: 1px solid #ddd;
+}
+
+tr:nth-child(even){
+  background-color: #eee;
+}
+
+.edit {
+  margin-left: 10px;
+}
+
+.edit-button {
+  color: black;
+  text-decoration: none;
+}
