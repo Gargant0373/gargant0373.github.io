@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="../css/style.css" rel="stylesheet" type="text/css" />
+    <link href="../css/editor.css" rel="stylesheet" type="text/css" />
+    <title>GoalSetter - Editor</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+  </head>
+  <body>
+    <div class="content">
+      <div class="header">
+        <a href="../index.html"><h1>GoalSetter</h1></a>
+
+        <ul class="nav">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="goals.html">Goals</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </div>
+      <div class="editor">
+        <div class="editor-header">Edit Goal</div>
+        <div class="editor-field">
+          <div class="editor-label">Target
+          <a class="edit-button" href="targets.html"
+            ><i class="edit fa-solid fa-edit"></i
+          ></a></div>
+          <div class="editor-input">
+            <input type="number" name="title" value="800" />
+          </div>
+        </div>
+        <div class="editor-field">
+          <div class="editor-label">Priority</div>
+          <div class="editor-input">
+            <select id="priority" value="high">
+              <option value="low">LOW</option>
+              <option value="medium">MEDIUM</option>
+              <option value="high">HIGH</option>
+            </select>
+          </div>
+        </div>
+        <div class="editor-field">
+          <div class="editor-label">Assignee</div>
+          <div class="editor-input">
+            <input type="text" name="assignee" value="Clau" />
+          </div>
+        </div>
+        <div class="editor-field">
+          <div class="editor-label">Goal</div>
+          <div class="editor-input">
+            <input type="text" name="goal" value="Save Money" />
+          </div>
+        </div>
+        <div class="editor-field">
+          <div class="editor-label">Deadline</div>
+          <div class="editor-input">
+            <input type="date" name="deadlien" value="2021-01-16" />
+          </div>
+        </div>
+        <div class="editor-actions">
+          <div class="editor-action">
+            <input type="submit" value="Save" />
+            <input type="submit" value="Cancel" />
+          </div>
+        </div>
+      </div>
+      <br /><br /><br /><br />
+      <div class="footer">
+        <div class="footer-bottom"><p>copyright &copy; 2023 GoalSetter</p></div>
+      </div>
+    </div>
+  </body>
+</html>
