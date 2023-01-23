@@ -34,9 +34,29 @@ function validate() {
   (zipField.value != null && zipValid) ? valid(zipField, zipMessage)
     : invalid(zipField, zipMessage, "Please enter a valid ZIP code.");
 
-  if(nameValid && idValid && passValid && emailValid) {
-    console.log("test");
-    alert("Email: ");
+  var genderField = document.getElementsByName("gender-field")[0];
+  var genderMessage = document.getElementById("gender-message");
+  var genderChosen = validateSelect(genderField);
+  genderChosen ? valid(genderField, genderMessage)
+    : invalid(genderField, genderMessage, "Please select your gender.");
+
+  var languageField = document.getElementsByName("language-field")[0];
+  var languageMessage = document.getElementById("language-message");
+  var languageValid = validateSelect(languageField);
+  languageValid ? valid(languageField, languageMessage)
+    : invalid(languageField, languageMessage, "Please select a language.");
+
+  if(nameValid && idValid && passValid && emailValid && genderChosen && languageValid) {
+    alert('Email: ' + emailField.value + '\n' +
+      'Name: ' + nameField.value + '\n' +
+      'User ID: ' + idField.value + '\n' +
+      'Address: ' + document.getElementsByName("address-field")[0].value + '\n' +
+      'Country: ' + document.getElementById("country-field").value + '\n' +
+      'ZIP Code: ' + zipField.value + '\n' +
+      'Gender: ' + genderField.value + '\n' +
+      'Language: ' + languageField.value + '\n' +
+      'Bio: ' + document.getElementsByName("bio-field")[0].value
+    );
   }
 }
 
