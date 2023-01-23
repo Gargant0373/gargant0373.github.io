@@ -21,7 +21,7 @@
       <div class="form">
         <div class="form-header">Register</div>
         <div class="form-fields">
-          <form>
+          <!-- <form> -->
             <div class="form-field">
               <div class="form-label">
                 <span style="color: red">* </span>Email:
@@ -71,7 +71,9 @@
             </div>
 
             <div class="form-field">
-              <div class="form-label">Country:</div>
+              <div class="form-label">
+                <span style="color: red">* </span>Country:
+              </div>
               <div class="form-input">
                 <select id="country-field">
                   <option value="default">Select a country</option>
@@ -93,6 +95,7 @@
               </div>
               <div class="form-input">
                 <select name="gender-field">
+                  <option value="default">Select your gender</option>
                   <option value="male">MALE</option>
                   <option value="female">FEMALE</option>
                   <option value="other">OTHER</option>
@@ -106,7 +109,11 @@
                 <span style="color: red">* </span>Language:
               </div>
               <div class="form-input">
-                <input type="text" name="language-field" required />
+                <select name="language-field">
+                  <option value="en">ENGLISH</option>
+                  <option value="ro">ROMANIAN</option>
+                  <option value="nl">DUTCH</option>
+                </select>
               </div>
               <div class="form-action-message" id="language-message"></div>
             </div>
@@ -126,10 +133,10 @@
               </div>
               <div class="form-action-message" id="tos-message"></div>
               <div class="form-submit">
-                <input type="submit" value="Register" />
+                <input type="submit" value="Register" onclick="validate()"/>
               </div>
             </div>
-          </form>
+          <!-- </form> -->
           <div class="form-link">
             Have an account already?
             <a href="login.html"> Login</a>
