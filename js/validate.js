@@ -19,7 +19,7 @@ function validate() {
     : invalid(idField, idMessage, "Please enter a valid user-id.");
 
   var nameField = document.getElementsByName("name-field")[0];
-  var nameRegex = /^[a-zA-Z]*$/;
+  var nameRegex = /^[a-zA-Z]{1,}/;
   var nameMessage = document.getElementById("name-message");
   nameRegex.test(nameField.value) ? valid(nameField, nameMessage)
     : invalid(nameField, nameMessage, "Please enter a valid name.");
