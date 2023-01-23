@@ -1,9 +1,9 @@
 function validate() {
   var emailField = document.getElementsByName("email-field")[0];
   var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-  emailRegex.test(emailField.value)
-    ? (emailField.style.border = "1px solid green")
-    : (emailField.style.border = "1px solid red");
+  var emailMessage = document.getElementById("email-message");
+  emailRegex.test(emailField.value) ? valid(emailField, emailMessage)
+    : invalid(emailField, emailMessage);
 
   var passField = document.getElementsByName("pass-field")[0];
   var passRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
@@ -45,5 +45,15 @@ function validate() {
   var languageRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
   languageRegex.test(languageField.value)
     ? (languageField.style.border = "1px solid green")
-    : (languageField.style.border = "1px solid red");  
+    : (languageField.style.border = "1px solid red");
+}
+
+function valid(element, message) {
+    element.style.border = "1px solid green";
+    message.innerHTML = "Looks good!";
+}
+
+function invalid(element, message) {
+    element.style.border = "1px solid red";
+    message.innerHTML = "Please enter a valid email address.";
 }

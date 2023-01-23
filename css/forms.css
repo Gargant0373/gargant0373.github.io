@@ -53,6 +53,11 @@
     background-color: #ddd;
 }
 
+.form-action-message {
+    padding: 5px;
+    font-size: 15px;
+}
+
 .form-link {
     text-align: center;
     padding: 20px;
