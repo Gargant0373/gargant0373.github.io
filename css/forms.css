@@ -53,14 +53,6 @@
     background-color: #ddd;
 }
 
-input:valid {
-    border: 1px solid green;
-}
-
-input:invalid {
-    border: 1px solid red;
-}
-
 .form-action-message {
     padding: 5px;
     font-size: 15px;
@@ -76,4 +68,9 @@ input:invalid {
     width: 100%;
     padding: 10px;
     font-size: 21px;
+}
+
+.behaviour-values {
+    text-align: justify;
+    font-size: 20px;
 }
