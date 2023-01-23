@@ -24,12 +24,6 @@ function validate() {
   nameRegex.test(nameField.value) ? valid(nameField, nameMessage)
     : invalid(nameField, nameMessage, "Please enter a valid name.");
 
-  var countryField = document.getElementsByName("country-field")[0];
-  var countryRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-  var countryMessage = document.getElementById("country-message");
-  countryRegex.test(countryField.value) ? valid(countryField, countryMessage)
-    : invalid(countryField, countryMessage, "Please enter a valid country.");
-
   var zipField = document.getElementsByName("zip-field")[0];
   var zipRegex = /\d{4}[A-Z]{2}/;
   var zipMessage = document.getElementById("zip-message");
@@ -37,7 +31,7 @@ function validate() {
     : invalid(zipField, zipMessage, "Please enter a valid ZIP code.");
 
   var languageField = document.getElementsByName("language-field")[0];
-  var languageRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+  var languageRegex = /^[a-zA-Z]$/;
   var languageMessage = document.getElementById("language-message");
   languageRegex.test(languageField.value) ? valid(languageField, languageMessage)
     : invalid(languageField, languageMessage, "Please enter a valid language.");
@@ -46,7 +40,12 @@ function validate() {
   var genderMessage = document.getElementById("gender-message");
   genderField.value = "" ? valid(genderField, genderMessage)
     : invalid(genderField, genderMessage, "Please select a gender.");
-  }
+
+  let checkbox = document.getElementById("tos");
+  var tosMessage = document.getElementById("tos-message");
+  checkbox.checked ? valid(tosField, tosMessage)
+  : invalid(tosField, tosMessage, "Please agree with the Terms of Service.");
+}
 
 function valid(element, message) {
     element.style.border = "1px solid green";
