@@ -7,15 +7,17 @@ function validate() {
 
   var passField = document.getElementsByName("pass-field")[0];
   var passRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-  passRegex.test(passField.value)
-    ? (passField.style.border = "1px solid green")
-    : (passField.style.border = "1px solid red");
+  var passMessage = document.getElementById("pass-message");
+  passRegex.test(passField.value) ? valid(passField, passMessage)
+    : invalid(passField, passMessage);
+
 
   var idField = document.getElementsByName("id-field")[0];
   var idRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-  idRegex.test(idField.value)
-    ? (idField.style.border = "1px solid green")
-    : (idField.style.border = "1px solid red");
+  var idMessage = document.getElementById("id-message");
+  idRegex.test(idField.value) ? valid(idField, idMessage)
+    : invalid(idField, idMessage);
+
 
   var nameField = document.getElementsByName("name-field")[0];
   var nameRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
