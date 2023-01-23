@@ -18,12 +18,10 @@
           <li><a href="login.html">Login</a></li>
         </ul>
       </div>
-      <form>
-        <div class="form">
-          <div class="form-header">Register</div>
-
-          <div class="form-fields">
-
+      <div class="form">
+        <div class="form-header">Register</div>
+        <div class="form-fields">
+          <form>
             <div class="form-field">
               <div class="form-label">
                 <span style="color: red">* </span>Email:
@@ -33,55 +31,62 @@
               </div>
               <div class="form-action-message" id="email-message"></div>
             </div>
+
             <div class="form-field">
               <div class="form-label">
                 <span style="color: red">* </span>Password:
               </div>
               <div class="form-input">
-                <input type="password" name="pass-field" required/>
+                <input type="password" name="pass-field" required min="12" />
               </div>
               <div class="form-action-message" id="pass-message"></div>
             </div>
+
             <div class="form-field">
               <div class="form-label">
                 <span style="color: red">* </span>Name:
               </div>
               <div class="form-input">
-                <input type="text" name="name-field" required/>
+                <input type="text" name="name-field" required />
               </div>
               <div class="form-action-message" id="name-message"></div>
             </div>
+
             <div class="form-field">
               <div class="form-label">
                 <span style="color: red">* </span>User ID:
               </div>
               <div class="form-input">
-                <input type="text" name="id-field" required/>
+                <input type="text" name="id-field" required min="5" max="12" />
               </div>
               <div class="form-action-message" id="user-message"></div>
             </div>
-          <div class="form-field">
-            <div class="form-label">Address:</div>
-            <div class="form-input">
-              <input type="text" name="address-field" />
+
+            <div class="form-field">
+              <div class="form-label">Address:</div>
+              <div class="form-input">
+                <input type="text" name="address-field" />
+              </div>
+              <div class="form-action-message" id="address-message"></div>
             </div>
-            <div class="form-action-message" id="address-message"></div>
-          </div>
-          <div class="form-field">
-            <div class="form-label">Country:</div>
-            <div class="form-input">
-              <select id="country-field">
-              </select>
+
+            <div class="form-field">
+              <div class="form-label">Country:</div>
+              <div class="form-input">
+                <select id="country-field">
+                  <option value="default">Select a country</option>
+                </select>
+              </div>
             </div>
-          </div>
-          
+
             <div class="form-field">
               <div class="form-label">ZIP Code:</div>
               <div class="form-input">
-                <input type="text" name="zip-field" />
+                <input type="text" name="zip-field" min="6" max="6" />
               </div>
               <div class="form-action-message" id="zip-message"></div>
             </div>
+
             <div class="form-field">
               <div class="form-label">
                 <span style="color: red">* </span>Gender:
@@ -95,15 +100,17 @@
               </div>
               <div class="form-action-message" id="gender-message"></div>
             </div>
+
             <div class="form-field">
               <div class="form-label">
                 <span style="color: red">* </span>Language:
               </div>
               <div class="form-input">
-                <input type="text" name="language-field" required/>
+                <input type="text" name="language-field" required />
               </div>
               <div class="form-action-message" id="language-message"></div>
             </div>
+
             <div class="form-field">
               <div class="form-label">Bio:</div>
               <div class="form-input">
@@ -111,20 +118,22 @@
               </div>
               <div class="form-action-message" id="bio-message"></div>
             </div>
+
+            <div class="form-actions">
+              <div class="form-label">
+                <input type="checkbox" name="terms" required />
+                I agree to the <a href="tos.html">Terms of Service</a>
+              </div>
+              <div class="form-action-message" id="tos-message"></div>
+              <div class="form-submit">
+                <input type="submit" value="Register" />
+              </div>
+            </div>
+          </form>
+          <div class="form-link">
+            Have an account already?
+            <a href="login.html"> Login</a>
           </div>
-          <div class="form-actions">
-            <div class="form-label">
-              <input type="checkbox" name="terms" required/>
-              I agree to the <a href="tos.html">Terms of Service</a>
-            </div>
-            <div class="form-action-message" id="tos-message"></div>
-            <div class="form-submit">
-              <input type="submit" value="Register" onclick="validate()"/>
-            </div>
-            <div class="form-link">
-              Have an account already?
-              <a href="login.html"> Login</a>
-            </div>
         </div>
       </div>
       <br /><br /><br /><br />

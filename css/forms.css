@@ -53,11 +53,11 @@
     background-color: #ddd;
 }
 
-.form-submit > input:valid {
+input:valid {
     border: 1px solid green;
 }
 
-.form-submit > input:invalid {
+input:invalid {
     border: 1px solid red;
 }
 
