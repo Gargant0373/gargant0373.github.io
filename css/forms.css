@@ -53,6 +53,14 @@
     background-color: #ddd;
 }
 
+.form-submit > input:valid {
+    border: 1px solid green;
+}
+
+.form-submit > input:invalid {
+    border: 1px solid red;
+}
+
 .form-action-message {
     padding: 5px;
     font-size: 15px;
