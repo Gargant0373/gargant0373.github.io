@@ -18,9 +18,8 @@ function validate() {
   idRegex.test(idField.value) ? valid(idField, idMessage)
     : invalid(idField, idMessage);
 
-
   var nameField = document.getElementsByName("name-field")[0];
-  var nameRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+  var nameRegex = /\D/;
   nameRegex.test(nameField.value)
     ? (nameField.style.border = "1px solid green")
     : (nameField.style.border = "1px solid red");
@@ -32,7 +31,7 @@ function validate() {
     : (countryField.style.border = "1px solid red");
 
   var zipField = document.getElementsByName("zip-field")[0];
-  var zipRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+  var zipRegex = /\d{4}[A-Z]{2}/;
   zipRegex.test(zipField.value)
     ? (zipField.style.border = "1px solid green")
     : (zipField.style.border = "1px solid red");
