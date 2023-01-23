@@ -5,6 +5,7 @@
     <link href="../css/forms.css" rel="stylesheet" type="text/css" />
     <script src="../js/validate.js"></script>
     <script src="../js/populate-countries.js"></script>
+    <script src="../js/behaviour.js"></script>
     <title>GoalSetter - Register</title>
   </head>
   <body>
@@ -18,6 +19,7 @@
           <li><a href="login.html">Login</a></li>
         </ul>
       </div>
+      <div class="behaviour-values" id = "values"></div>
       <div class="form">
         <div class="form-header">Register</div>
         <div class="form-fields">
@@ -134,7 +136,7 @@
               </div>
               <div class="form-action-message" id="tos-message"></div>
               <div class="form-submit">
-                <input type="submit" id="tos-field" value="Register" onclick="validate()"/>
+                <input type="submit" value="Register" onclick="validate();displayBehaviour()"/>
               </div>
             </div>
           <!-- </form> -->

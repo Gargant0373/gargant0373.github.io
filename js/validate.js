@@ -31,7 +31,7 @@ function validate() {
   var zipRegex = /\d{4}[A-Z]{2}/;
   var zipMessage = document.getElementById("zip-message");
   var zipValid = zipRegex.test(zipField.value);
-  (zipField.value != null && zipValid) ? valid(zipField, zipMessage)
+  (zipField.value != "" && zipValid) ? valid(zipField, zipMessage)
     : invalid(zipField, zipMessage, "Please enter a valid ZIP code.");
 
   var genderField = document.getElementById("gender-field");
