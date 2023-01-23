@@ -4,6 +4,7 @@
     <link href="../css/style.css" rel="stylesheet" type="text/css" />
     <link href="../css/forms.css" rel="stylesheet" type="text/css" />
     <script src="../js/validate.js"></script>
+    <script src="../js/populate-countries.js"></script>
     <title>GoalSetter - Register</title>
   </head>
   <body>
@@ -17,37 +18,48 @@
           <li><a href="login.html">Login</a></li>
         </ul>
       </div>
-      <div class="form">
-        <div class="form-header">Register</div>
-        <div class="form-fields">
-          <div class="form-field">
-            <div class="form-label"><span style="color: red">* </span>Email:</div>
-            <div class="form-input">
-              <input type="email" name="email-field" required/>
+      <form>
+        <div class="form">
+          <div class="form-header">Register</div>
+
+          <div class="form-fields">
+
+            <div class="form-field">
+              <div class="form-label">
+                <span style="color: red">* </span>Email:
+              </div>
+              <div class="form-input">
+                <input type="email" name="email-field" required />
+              </div>
+              <div class="form-action-message" id="email-message"></div>
             </div>
-            <div class="form-action-message" id="email-message"></div>
-          </div>
-          <div class="form-field">
-            <div class="form-label"><span style="color: red">* </span>Password:</div>
-            <div class="form-input">
-              <input type="text" name="pass-field" />
+            <div class="form-field">
+              <div class="form-label">
+                <span style="color: red">* </span>Password:
+              </div>
+              <div class="form-input">
+                <input type="password" name="pass-field" required/>
+              </div>
+              <div class="form-action-message" id="pass-message"></div>
             </div>
-            <div class="form-action-message" id="pass-message"></div>
-          </div>
-          <div class="form-field">
-            <div class="form-label"><span style="color: red">* </span>Name:</div>
-            <div class="form-input">
-              <input type="text" name="name-field" />
+            <div class="form-field">
+              <div class="form-label">
+                <span style="color: red">* </span>Name:
+              </div>
+              <div class="form-input">
+                <input type="text" name="name-field" required/>
+              </div>
+              <div class="form-action-message" id="name-message"></div>
             </div>
-            <div class="form-action-message" id="name-message"></div>
-          </div>
-          <div class="form-field">
-            <div class="form-label"><span style="color: red">* </span>User ID:</div>
-            <div class="form-input">
-              <input type="text" name="id-field" />
+            <div class="form-field">
+              <div class="form-label">
+                <span style="color: red">* </span>User ID:
+              </div>
+              <div class="form-input">
+                <input type="text" name="id-field" required/>
+              </div>
+              <div class="form-action-message" id="user-message"></div>
             </div>
-            <div class="form-action-message" id="user-message"></div>
-          </div>
           <div class="form-field">
             <div class="form-label">Address:</div>
             <div class="form-input">
@@ -58,56 +70,61 @@
           <div class="form-field">
             <div class="form-label">Country:</div>
             <div class="form-input">
-              <input type="text" name="country-field" />
-            </div>
-            <div class="form-action-message" id="country-message"></div>
-          </div>
-          <div class="form-field">
-            <div class="form-label">ZIP Code:</div>
-            <div class="form-input">
-              <input type="text" name="zip-field" />
-            </div>
-            <div class="form-action-message" id="zip-message"></div>
-          </div>
-          <div class="form-field">
-            <div class="form-label"><span style="color: red">* </span>Gender:</div>
-            <div class="form-input">
-              <select name="gender-field">
-                <option value="male">MALE</option>
-                <option value="female">FEMALE</option>
-                <option value="other">OTHER</option>
+              <select id="country-field">
               </select>
             </div>
-            <div class="form-action-message" id="gender-message"></div>
           </div>
-          <div class="form-field">
-            <div class="form-label"><span style="color: red">* </span>Language:</div>
-            <div class="form-input">
-              <input type="text" name="language-field" />
+          
+            <div class="form-field">
+              <div class="form-label">ZIP Code:</div>
+              <div class="form-input">
+                <input type="text" name="zip-field" />
+              </div>
+              <div class="form-action-message" id="zip-message"></div>
             </div>
-            <div class="form-action-message" id="language-message"></div>
-          </div>
-          <div class="form-field">
-            <div class="form-label">Bio:</div>
-            <div class="form-input">
-              <input type="text" name="bio-field" />
+            <div class="form-field">
+              <div class="form-label">
+                <span style="color: red">* </span>Gender:
+              </div>
+              <div class="form-input">
+                <select name="gender-field">
+                  <option value="male">MALE</option>
+                  <option value="female">FEMALE</option>
+                  <option value="other">OTHER</option>
+                </select>
+              </div>
+              <div class="form-action-message" id="gender-message"></div>
             </div>
-            <div class="form-action-message" id="bio-message"></div>
+            <div class="form-field">
+              <div class="form-label">
+                <span style="color: red">* </span>Language:
+              </div>
+              <div class="form-input">
+                <input type="text" name="language-field" required/>
+              </div>
+              <div class="form-action-message" id="language-message"></div>
+            </div>
+            <div class="form-field">
+              <div class="form-label">Bio:</div>
+              <div class="form-input">
+                <input type="text" name="bio-field" />
+              </div>
+              <div class="form-action-message" id="bio-message"></div>
+            </div>
           </div>
-        </div>
-        <div class="form-actions">
-          <div class="form-label">
-            <input type="checkbox" name="terms" />
-            I agree to the <a href="tos.html">Terms of Service</a>
-          </div>
-          <div class="form-action-message" id="tos-message"></div>
-          <div class="form-submit" onclick="validate()">
-            <input type="submit" value="Register" />
-          </div>
-          <div class="form-link">
-            Have an account already?
-            <a href="login.html"> Login</a>
-          </div>
+          <div class="form-actions">
+            <div class="form-label">
+              <input type="checkbox" name="terms" required/>
+              I agree to the <a href="tos.html">Terms of Service</a>
+            </div>
+            <div class="form-action-message" id="tos-message"></div>
+            <div class="form-submit">
+              <input type="submit" value="Register" onclick="validate()"/>
+            </div>
+            <div class="form-link">
+              Have an account already?
+              <a href="login.html"> Login</a>
+            </div>
         </div>
       </div>
       <br /><br /><br /><br />

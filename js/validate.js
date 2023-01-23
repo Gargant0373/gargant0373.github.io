@@ -3,51 +3,48 @@ function validate() {
   var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
   var emailMessage = document.getElementById("email-message");
   emailRegex.test(emailField.value) ? valid(emailField, emailMessage)
-    : invalid(emailField, emailMessage);
+    : invalid(emailField, emailMessage, "Please enter a valid email address.");
 
   var passField = document.getElementsByName("pass-field")[0];
-  var passRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+  var passRegex = /^[a-zA-Z0-9._-]@[a-zA-Z0-9.-]\.[a-zA-Z]{2,4}$/;
   var passMessage = document.getElementById("pass-message");
   passRegex.test(passField.value) ? valid(passField, passMessage)
-    : invalid(passField, passMessage);
+    : invalid(passField, passMessage, "Please enter a valid password.");
 
 
   var idField = document.getElementsByName("id-field")[0];
-  var idRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+  var idRegex = /^[A-Z]{1}[a-zA-Z0-9.-]{3,10}[`!@#$%^&*()_+\-=]{1}$/;
   var idMessage = document.getElementById("id-message");
   idRegex.test(idField.value) ? valid(idField, idMessage)
-    : invalid(idField, idMessage);
-
+    : invalid(idField, idMessage, "Please enter a valid user-id.");
 
   var nameField = document.getElementsByName("name-field")[0];
-  var nameRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-  nameRegex.test(nameField.value)
-    ? (nameField.style.border = "1px solid green")
-    : (nameField.style.border = "1px solid red");
-
-  var countryField = document.getElementsByName("country-field")[0];
-  var countryRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-  countryRegex.test(countryField.value)
-    ? (countryField.style.border = "1px solid green")
-    : (countryField.style.border = "1px solid red");
+  var nameRegex = /^[a-zA-Z]{1,}/;
+  var nameMessage = document.getElementById("name-message");
+  nameRegex.test(nameField.value) ? valid(nameField, nameMessage)
+    : invalid(nameField, nameMessage, "Please enter a valid name.");
 
   var zipField = document.getElementsByName("zip-field")[0];
-  var zipRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-  zipRegex.test(zipField.value)
-    ? (zipField.style.border = "1px solid green")
-    : (zipField.style.border = "1px solid red");
-  
-  var genderField = document.getElementsByName("gender-field")[0];
-  var genderRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-  genderRegex.test(genderField.value)
-    ? (genderField.style.border = "1px solid green")
-    : (genderField.style.border = "1px solid red");
+  var zipRegex = /\d{4}[A-Z]{2}/;
+  var zipMessage = document.getElementById("zip-message");
+  zipRegex.test(zipField.value) ? valid(zipField, zipMessage)
+    : invalid(zipField, zipMessage, "Please enter a valid ZIP code.");
 
   var languageField = document.getElementsByName("language-field")[0];
-  var languageRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-  languageRegex.test(languageField.value)
-    ? (languageField.style.border = "1px solid green")
-    : (languageField.style.border = "1px solid red");
+  var languageRegex = /^[a-zA-Z]$/;
+  var languageMessage = document.getElementById("language-message");
+  languageRegex.test(languageField.value) ? valid(languageField, languageMessage)
+    : invalid(languageField, languageMessage, "Please enter a valid language.");
+
+  var genderField = document.getElementsByName("gender-field")[0];
+  var genderMessage = document.getElementById("gender-message");
+  genderField.value = "" ? valid(genderField, genderMessage)
+    : invalid(genderField, genderMessage, "Please select a gender.");
+
+  let checkbox = document.getElementById("tos");
+  var tosMessage = document.getElementById("tos-message");
+  checkbox.checked ? valid(tosField, tosMessage)
+  : invalid(tosField, tosMessage, "Please agree with the Terms of Service.");
 }
 
 function valid(element, message) {
@@ -55,7 +52,7 @@ function valid(element, message) {
     message.innerHTML = "Looks good!";
 }
 
-function invalid(element, message) {
+function invalid(element, message, text) {
     element.style.border = "1px solid red";
-    message.innerHTML = "Please enter a valid email address.";
+    message.innerHTML = text;
 }
