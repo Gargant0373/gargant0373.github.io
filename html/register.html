@@ -27,7 +27,7 @@
                 <span style="color: red">* </span>Email:
               </div>
               <div class="form-input">
-                <input type="email" id="email-field" required />
+                <input type="email" id="email-field" pattern = "^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$" required />
               </div>
               <div class="form-action-message" id="email-message"></div>
             </div>
@@ -37,7 +37,7 @@
                 <span style="color: red">* </span>Password:
               </div>
               <div class="form-input">
-                <input type="password" id="pass-field" required min="12" />
+                <input type="password" id="pass-field" pattern = "^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[`!@#$%^&*()_+\-=]).{12,}$" title = "Your password should contain at least one uppercase letter, one lowercase letter, one digit and one special character. It also must have at least 12 characters." required min="12" />
               </div>
               <div class="form-action-message" id="pass-message"></div>
             </div>
@@ -47,7 +47,7 @@
                 <span style="color: red">* </span>Name:
               </div>
               <div class="form-input">
-                <input type="text" id="name-field" required />
+                <input type="text" id="name-field" pattern="[a-zA-Z]{1,}" title="Your name should have only letters and no spaces." required />
               </div>
               <div class="form-action-message" id="name-message"></div>
             </div>
@@ -57,7 +57,7 @@
                 <span style="color: red">* </span>User ID:
               </div>
               <div class="form-input">
-                <input type="text" id="id-field" required min="5" max="12" />
+                <input type="text" id="id-field" pattern="^[A-Z]{1}[a-zA-Z0-9.-]{3,10}[0-9`!@#$%^&*()_+\-=]{1}$" title="Your user ID must start with a capital letter, end with a special character or a number and have between 5 and 12 characters." required min="5" max="12" />
               </div>
               <div class="form-action-message" id="user-message"></div>
             </div>
@@ -84,7 +84,7 @@
             <div class="form-field">
               <div class="form-label">ZIP Code:</div>
               <div class="form-input">
-                <input type="text" id="zip-field" min="6" max="6" />
+                <input type="text" id="zip-field" pattern="\d{4}[A-Z]{2}" title="Your ZIP code must have 4 digits and 2 capital letters." min="6" max="6" />
               </div>
               <div class="form-action-message" id="zip-message"></div>
             </div>
@@ -134,7 +134,7 @@
               </div>
               <div class="form-action-message" id="tos-message"></div>
               <div class="form-submit">
-                <input type="submit" value="Register" onclick="validate()"/>
+                <input type="submit" id="tos-field" value="Register" onclick="validate()"/>
               </div>
             </div>
           <!-- </form> -->

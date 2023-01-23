@@ -46,7 +46,10 @@ function validate() {
   languageValid ? valid(languageField, languageMessage)
     : invalid(languageField, languageMessage, "Please select a language.");
 
-  if(nameValid && idValid && passValid && emailValid && genderChosen && languageValid) {
+  var tosField = document.querySelector('#tos-field');
+  var tosValid = tosField.checked;
+
+  if(nameValid && idValid && passValid && emailValid && genderChosen && languageValid && tosValid) {
     alert('Email: ' + emailField.value + '\n' +
       'Name: ' + nameField.value + '\n' +
       'User ID: ' + idField.value + '\n' +
